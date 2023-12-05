@@ -112,7 +112,7 @@
                                 <i class="bi bi-house">
 
                                 </i>
-                                <span class="item-name">Dashboard</span>
+                                <span class="item-name">Carreteras</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -120,7 +120,7 @@
                                 <i class="bi bi-list">
 
                                 </i>
-                                <span class="item-name">Catalogos</span>
+                                <span class="item-name">Categorías</span>
                                 <i class="right-icon">
                                     <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -129,21 +129,48 @@
                             </a>
                             <ul class="sub-nav collapse" id="horizontal-menu" data-bs-parent="#sidebar-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="./?view=persons&opt=all">
+                                    <a class="nav-link " href="./?view=index&opt=locales">
                                       <i class="icon">
                                            <i class="bi bi-circle"></i>
                                         </i>
                                       <i class="sidenav-mini-icon"> C </i>
-                                      <span class="item-name"> Contactos </span>
+                                      <span class="item-name"> Carreteras Locales </span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="./?view=tables">
+                                    <a class="nav-link " href="./?view=index&opt=comerciales">
                                       <i class="icon">
                                            <i class="bi bi-circle"></i>
                                         </i>
                                       <i class="sidenav-mini-icon"> T </i>
-                                      <span class="item-name"> Table </span>
+                                      <span class="item-name"> Carreteras Comerciales </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="./?view=index&opt=regionales">
+                                      <i class="icon">
+                                           <i class="bi bi-circle"></i>
+                                        </i>
+                                      <i class="sidenav-mini-icon"> T </i>
+                                      <span class="item-name"> Carreteras Regionales </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="./?view=index&opt=nacionales">
+                                      <i class="icon">
+                                           <i class="bi bi-circle"></i>
+                                        </i>
+                                      <i class="sidenav-mini-icon"> T </i>
+                                      <span class="item-name"> Carreteras Nacionales </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="./?view=index&opt=autovias">
+                                      <i class="icon">
+                                           <i class="bi bi-circle"></i>
+                                        </i>
+                                      <i class="sidenav-mini-icon"> T </i>
+                                      <span class="item-name"> Autovías </span>
                                     </a>
                                 </li>
                             </ul>

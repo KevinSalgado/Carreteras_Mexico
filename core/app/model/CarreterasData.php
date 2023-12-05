@@ -9,6 +9,7 @@ class CarreterasData extends Extra{
 	public function __construct(){
 		$this->extra_fields = array();
 		$this->extra_fields_strings = array();
+		//$this->id_Carretera = "";
 		$this->Nombre = "";
 		$this->Kilometros = "";
 		$this->Categoria_id = "";
@@ -37,6 +38,23 @@ class CarreterasData extends Extra{
 			LEFT JOIN categorias cat ON c.Categoria_id = cat.id_Categoria
 			LEFT JOIN carreteras ca ON c.Carretera_Anterior = ca.id_Carretera
 			LEFT JOIN carreteras cp ON c.Carretera_Posterior = cp.id_Carretera;";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new CarreterasData());
+	}
+
+	public static function getByCat($id_cat){
+		$sql = "select
+				c.Nombre AS Carretera,
+				c.Kilometros AS Kilometros,
+				cat.Nombre AS Categoria,
+				ca.Nombre AS Carretera_Anterior,
+				cp.Nombre AS Carretera_Posterior
+			FROM
+				carreteras c
+			LEFT JOIN categorias cat ON c.Categoria_id = cat.id_Categoria
+			LEFT JOIN carreteras ca ON c.Carretera_Anterior = ca.id_Carretera
+			LEFT JOIN carreteras cp ON c.Carretera_Posterior = cp.id_Carretera
+				where c.Categoria_id =".$id_cat;
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new CarreterasData());
 	}

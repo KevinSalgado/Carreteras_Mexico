@@ -1,44 +1,47 @@
 <?php
 
-class TramoData extends Extra{
+class ComunaData extends Extra{
 
-	public static $tablename = "tramos";
+	public static $tablename = "comunas";
 	public $extra_fields_strings;
 	public $extra_fields;
 
 	public function __construct(){
 		$this->extra_fields = array();
 		$this->extra_fields_strings = array();
-        //$this->id = "";
+        $this->id_Comuna = "";
 		$this->Nombre = "";
+		$this->Kilometros = "";
 		$this->Pos_Inicio = "";
 		$this->Pos_Final = "";
-		$this->Tramo_Anterior = "";
-		$this->Tramo_Posterior = "";
-        $this->Kilometros = "";
-        $this->Carretera_id = "";
+		$this->Tramo_id = "";
+        $this->Comuna_Anterior = "";
+        $this->Comuna_Posterior = "";
 	}
 
 
-	public static function getByCarre($Carretera)
+	public static function getByTramo($Tramo)
 	{
         $sql = "select
-                t.id_Tramo,
-                t.Nombre AS Nombre_Tramo,
-                t.Pos_Inicio,
-                t.Pos_Final,
-                t.Kilometros AS Kilometros_Tramo,
-                ta.Nombre AS Tramo_Anterior,
-                tp.Nombre AS Tramo_Posterior
+            c.id_Comuna,
+            c.Nombre AS Nombre_Comuna,
+            c.Pos_Inicio,
+            c.Pos_Final,
+            c.Kilometros AS Kilometros,
+            ca.Nombre AS Comuna_Anterior,
+            cp.Nombre AS Comuna_Posterior
             FROM
-                carreteras c
-            JOIN tramos t ON c.id_Carretera = t.Carretera_id
-			LEFT JOIN tramos ta ON t.Tramo_Anterior = ta.id_Tramo
-			LEFT JOIN tramos tp ON t.Tramo_Posterior = tp.id_Tramo 
+                comunas c
+            JOIN
+                tramos t ON t.id_Tramo = c.Tramo_id
+            LEFT JOIN
+                comunas ca ON c.Comuna_Anterior = ca.id_Comuna
+            LEFT JOIN
+                comunas cp ON c.Comuna_Posterior = cp.id_Comuna
             WHERE
-                c.Nombre = '$Carretera'";
+                t.Nombre = '$Tramo';";
 		$query = Executor::doit($sql);
-		return Model::many($query[0],new TramoData()); 
+		return Model::many($query[0],new ComunaData()); 
 	}
 
 	// public static function getAll(){

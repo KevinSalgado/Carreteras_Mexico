@@ -34,6 +34,7 @@ if($found){
                 <td><?php echo $row->Tramo_Anterior; ?></td>
                 <td><?php echo $row->Tramo_Posterior; ?></td>
                 <td><?php echo $row->Kilometros_Tramo; ?></td>
+                <td><a href="./?view=comuna&opt=comuna&Comuna=<?php echo $row->Nombre_Tramo;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Comunas </a> </td>
             </tr>
             <?php
                 }

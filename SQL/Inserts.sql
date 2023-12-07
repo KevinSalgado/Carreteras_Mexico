@@ -28,3 +28,11 @@ INSERT INTO comunas (Nombre, Kilometros, Pos_Inicio, Pos_Final, Tramo_id, Comuna
     ('Comuna 4', 160.0, 150.0, 160.0, 4, 3, null),   -- Comuna anterior es Comuna 3, no tiene posterior
     ('Comuna 5', 180.0, 160.0, 180.0, 5, 4, null);      -- Comuna anterior es Comuna 4, no tiene posterior
     
+insert into user (nombre,apellido,username,password,email) values (
+			"Crack",
+			"",
+			"crack",
+			sha1(md5("qwerty")),
+			"crack@man.org"
+		)
+    

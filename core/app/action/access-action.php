@@ -1,5 +1,3 @@
-
-<br>
 <?php
 
 
@@ -17,7 +15,7 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "login"){
 		$base = new Database();
 		$con = $base->connect();
 
-		$sentencia = "select * from user where (email=\"".$val_user."\" or username=\"".$val_user."\") and username=\"".$val_user."\"";
+		$sentencia = "select * from user where (email=\"".$val_user."\" or username=\"".$val_user."\") and username=\"".$val_user."\" and password='$val_pass'";
 
 		$query = $con->query($sentencia);
 
@@ -38,16 +36,17 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "login"){
 
 			
 			Core::addToastr("info","Bienvenido $username");
-			Core::redir("./?view=home");
+			Core::redir("./?view=home_admin");
 		}else{
-			//Core::redir("./");
+			Core::redir("./?view=login");
 		}
 
 
 	}else{
-		Core::redir("./?view=home");
+		Core::redir("./?view=home_admin");
 
 	}
+	//Core::redir("./?view=home");
 
 
 		
@@ -56,6 +55,10 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "login"){
 	session_destroy();
 
 	Core::redir("./");
+}else if(isset($_GET["opt"]) && $_GET["opt"] == "login_redir"){
+	unset($_SESSION);
+	session_destroy();
+	Core::redir("./?view=login");
 }
 
 	

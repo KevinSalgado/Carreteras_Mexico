@@ -44,3 +44,18 @@ CREATE TABLE comunas (
     FOREIGN KEY (Comuna_Anterior) REFERENCES comunas(id_Comuna),
     FOREIGN KEY (Comuna_Posterior) REFERENCES comunas(id_Comuna)
 );
+
+create table user(
+			id int not null auto_increment primary key,
+			nombre varchar (50),
+			apellido varchar (220),
+			username varchar(90),
+			password varchar(220),
+			email varchar(120),
+			kind int default 1,
+			status int default 1, /*1 visible, 0 no visible.*/
+
+
+			updated_at datetime,
+			created_at datetime
+		);

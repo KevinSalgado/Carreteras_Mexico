@@ -26,6 +26,18 @@ class CarreterasData extends Extra{
 		return Model::one($query[0],new CarreterasData()); 
 	}
 
+	public static function getByNombre($nombre){
+		$sql = "select * from carreteras where Nombre='$nombre'";
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new CarreterasData());
+	}
+
+	public static function getByPosterior($posterior){
+		$sql = "select * from carreteras where id_Carretera='$posterior'";
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new CarreterasData());
+	}
+
 	public static function getAll(){
 		$sql = "select
 				c.Nombre AS Carretera,

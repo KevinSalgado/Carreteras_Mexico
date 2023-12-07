@@ -41,6 +41,17 @@ class TramoData extends Extra{
 		return Model::many($query[0],new TramoData()); 
 	}
 
+	public static function getLastTramo($id_carretera){
+		$sql = "select t.id_Tramo as id_Tramo, t.Nombre as Nombre
+		FROM tramos t
+		INNER JOIN carreteras c ON t.Carretera_id = c.id_Carretera
+		WHERE c.id_Carretera = '$id_carretera'
+		ORDER BY t.Pos_Final DESC
+		LIMIT 1;";
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new TramoData());
+	}
+
 	// public static function getAll(){
 	// 	$sql = "select
 	// 			c.Nombre AS Carretera,

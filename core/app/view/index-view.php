@@ -25,6 +25,7 @@
                 <td><?php echo $row->Carretera_Anterior; ?></td>
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><a href="./?view=tramo&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
+                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
             </tr>
             <?php
                 }
@@ -62,6 +63,7 @@
                 <td><?php echo $row->Carretera_Anterior; ?></td>
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><a href="./?view=tramo&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
+                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
             </tr>
             <?php
                 }
@@ -98,6 +100,7 @@
                 <td><?php echo $row->Carretera_Anterior; ?></td>
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><a href="./?view=tramo&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
+                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
             </tr>
             <?php
                 }
@@ -134,6 +137,7 @@
                 <td><?php echo $row->Carretera_Anterior; ?></td>
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><a href="./?view=tramo&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
+                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
             </tr>
             <?php
                 }
@@ -170,6 +174,7 @@
                 <td><?php echo $row->Carretera_Anterior; ?></td>
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><a href="./?view=tramo&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
+                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
             </tr>
             <?php
                 }
@@ -210,6 +215,7 @@
                         <td><?php echo $row->Carretera_Anterior; ?></td>
                         <td><?php echo $row->Carretera_Posterior; ?></td>
                         <td><a href="./?view=tramo&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
+                        <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
                     </tr>
             <?php
                 }

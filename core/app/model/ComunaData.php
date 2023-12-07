@@ -44,6 +44,17 @@ class ComunaData extends Extra{
 		return Model::many($query[0],new ComunaData()); 
 	}
 
+	public static function getLastComuna($id_tramo){
+		$sql = "select c.id_Comuna as id_Comuna, c.Nombre as Nombre 
+		FROM comunas c
+		INNER JOIN tramos t ON c.Tramo_id = t.id_Tramo
+		WHERE t.id_tramo = '$id_tramo'
+		ORDER BY c.Pos_Final DESC
+		LIMIT 1;";
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new ComunaData());
+	}
+
 	// public static function getAll(){
 	// 	$sql = "select
 	// 			c.Nombre AS Carretera,

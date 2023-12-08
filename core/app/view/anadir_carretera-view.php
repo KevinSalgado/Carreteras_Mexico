@@ -50,12 +50,14 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "anadir"){
                         <label class="form-label" for="Carretera_Anterior">Carretera anterior:</label>
                         <select class="form-control" id="Carretera_Anterior" name="Carretera_Anterior">
                         <?php
+							$contador = 1;
 		                    foreach ($listaCarreteras as $key => $row) {
 		                ?>
-                            <option value=<?php echo $row->id_Carretera; ?>><?php echo $row->Carretera; ?></option>
+                            <option value=<?php echo $contador; ?>><?php echo $row->Carretera; ?></option>
                         
                         <?php
-                            }
+                            $contador = $contador + 1;
+						}
                         ?>
                         </select>
                     </div>
@@ -64,12 +66,14 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "anadir"){
                         <label class="form-label" for="Carretera_Posterior">Carretera posterior:</label>
                         <select class="form-control" id="Carretera_Posterior" name="Carretera_Posterior">
                         <?php
+							$contador = 1;
 		                    foreach ($listaCarreteras as $key => $row) {
 		                ?>
-                            <option value=<?php echo $row->id_Carretera; ?>><?php echo $row->Carretera; ?></option>
+                            <option value=<?php echo $contador; ?>><?php echo $row->Carretera; ?></option>
                         
                         <?php
-                            }
+                            $contador = $contador + 1;
+							}
                         ?>
                         </select>
                     </div>

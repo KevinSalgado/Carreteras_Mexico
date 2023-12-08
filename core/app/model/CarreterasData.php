@@ -80,8 +80,9 @@ class CarreterasData extends Extra{
 
 	public function add(){
 		$sql = "insert into carreteras (Nombre, Kilometros, Categoria_id, Carretera_Anterior, Carretera_Posterior) value
-		 (\"$this->Nombre\",\"$this->Kilometros\",\"$this->Categoria_id\",\"$this->Carretera_Anterior\",
-		 \"$this->Carretera_Posterior\"";
+		 (\"$this->Nombre\",$this->Kilometros,$this->Categoria_id,$this->Carretera_Anterior,
+		 $this->Carretera_Posterior)";
+
 
 		return Executor::doit($sql);
 

@@ -17,10 +17,16 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "anadir"){
 		$u->Carretera_Anterior = $_POST["Carretera_Anterior"];
 		$u->Carretera_Posterior = $_POST["Carretera_Posterior"];
 
-		$u->add();
+		if(($u->Nombre and $u->Kilometros) != null ){
+			$u->add();
+			Core::addToastr('success','Carretera agregada con exito!');
+			Core::redir("./?view=home_admin");
+		} else {
+			Core::addToastr("error","Completa el formulario para poder agregar una carretera");
+			Core::redir("./?view=anadir_carretera&opt=anadir");
+		}
 
-		Core::addToastr('success','Carretera agregada con exito!');
-		Core::redir("./?view=home_admin");
+		
 
 	}else{
 

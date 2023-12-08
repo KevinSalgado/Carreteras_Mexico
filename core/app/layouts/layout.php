@@ -522,7 +522,7 @@
                         </li>
                     -->
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./">
+                            <a class="nav-link active" aria-current="page" href="./?view=home_admin">
                                 <i class="bi bi-house">
 
                                 </i>
@@ -542,9 +542,63 @@
                                 </i>
                             </a>
                             <ul class="sub-nav collapse" id="horizontal-menu" data-bs-parent="#sidebar-menu">
-                                
+                            <li class="nav-item">
+                                    <a class="nav-link " href="./?view=home_admin&opt=locales">
+                                      <i class="icon">
+                                           <i class="bi bi-circle"></i>
+                                        </i>
+                                      <i class="sidenav-mini-icon"> C </i>
+                                      <span class="item-name"> Carreteras Locales </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="./?view=home_admin&opt=comerciales">
+                                      <i class="icon">
+                                           <i class="bi bi-circle"></i>
+                                        </i>
+                                      <i class="sidenav-mini-icon"> T </i>
+                                      <span class="item-name"> Carreteras Comerciales </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="./?view=home_admin&opt=regionales">
+                                      <i class="icon">
+                                           <i class="bi bi-circle"></i>
+                                        </i>
+                                      <i class="sidenav-mini-icon"> T </i>
+                                      <span class="item-name"> Carreteras Regionales </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="./?view=home_admin&opt=nacionales">
+                                      <i class="icon">
+                                           <i class="bi bi-circle"></i>
+                                        </i>
+                                      <i class="sidenav-mini-icon"> T </i>
+                                      <span class="item-name"> Carreteras Nacionales </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="./?view=home_admin&opt=autovias">
+                                      <i class="icon">
+                                           <i class="bi bi-circle"></i>
+                                        </i>
+                                      <i class="sidenav-mini-icon"> T </i>
+                                      <span class="item-name"> Autovías </span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./?view=anadir_carretera&opt=anadir">
+                                <i class="bi bi-house">
+
+                                </i>
+                                <span class="item-name">Anadir carreteras</span>
+                            </a>
+                        </li>
+                        
                         <li><hr class="hr-horizontal"></li>
                         <!--<li class="nav-item static-item">
                             <a class="nav-link static-item disabled" href="#" tabindex="-1">
@@ -690,7 +744,7 @@
                     </li>
                 -->
                     <?php
-                        //$user  = UserData::getByID($_SESSION['user_id']);
+                        $user  = UserData::getByID($_SESSION['user_id']);
                     ?>
                 
                     <li class="nav-item dropdown">
@@ -702,7 +756,7 @@
                         <img src="./assets/images/avatars/avtar_5.png" alt="User-Profile" class="theme-color-yellow-img img-fluid avatar avatar-50 avatar-rounded">
                         <img src="./assets/images/avatars/avtar_3.png" alt="User-Profile" class="theme-color-pink-img img-fluid avatar avatar-50 avatar-rounded">
                         <div class="caption ms-3 d-none d-md-block ">
-                            <!-- <h6 class="mb-0 caption-title"><?php //echo $user->nombre;?></h6> -->
+                            <h6 class="mb-0 caption-title"><?php echo $user->nombre;?></h6>
                             <p class="mb-0 caption-sub-title"></p>
                         </div>
                       </a>

@@ -9,7 +9,7 @@ class CarreterasData extends Extra{
 	public function __construct(){
 		$this->extra_fields = array();
 		$this->extra_fields_strings = array();
-		//$this->id_Carretera = "";
+		$this->id_Carretera = "";
 		$this->Nombre = "";
 		$this->Kilometros = "";
 		$this->Categoria_id = "";

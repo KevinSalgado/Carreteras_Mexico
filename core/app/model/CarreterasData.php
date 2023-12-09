@@ -19,9 +19,9 @@ class CarreterasData extends Extra{
 	}
 
 
-	public static function getByID($id)
+	public static function getByID($id_Carretera)
 	{
-		$sql = "select * from carreteras where id=".$id;
+		$sql = "select * from carreteras where id_Carretera=".$id_Carretera;
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new CarreterasData()); 
 	}
@@ -88,12 +88,12 @@ class CarreterasData extends Extra{
 
 	}
 
-	// public function	update(){
-	// 	$sql  = "update user set nombre= \"$this->nombre\",apellido= \"$this->apellido\",email= \"$this->email\",username= \"$this->username\" where id=".$this->id;
+	public function	update(){
+		$sql  = "update carreteras set Nombre= \"$this->Nombre\",Kilometros= $this->Kilometros,Categoria_id= $this->Categoria_id ,Carretera_Anterior= $this->Carretera_Anterior, Carretera_Posterior= $this->Carretera_Posterior where id_Carretera=".$this->id_Carretera;
+		print $sql;
+		return Executor::doit($sql);
 
-	// 	return Executor::doit($sql);
-
-	// }
+	}
 
 	// public function	updatePass(){
 	// 	$sql  = "update user set password= \"$this->password\" where id=".$this->id;

@@ -36,7 +36,8 @@ if(!isset($_SESSION['user_id']))
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><a href="./?view=tramo&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
                 <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
-				<td><a href="./?view=Eliminar_Carretera&opt=Eliminar_Carretera&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
+				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
+                <td><a href="./?view=Eliminar_Carretera&opt=Eliminar_Carretera&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
             </tr>
             <?php
                 }
@@ -75,7 +76,8 @@ if(!isset($_SESSION['user_id']))
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><a href="./?view=tramo&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
                 <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
-				<td><a href="./?view=Eliminar_Carretera&opt=Eliminar_Carretera&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
+				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
+                <td><a href="./?view=Eliminar_Carretera&opt=Eliminar_Carretera&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
 			</tr>
             <?php
                 }
@@ -113,7 +115,8 @@ if(!isset($_SESSION['user_id']))
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><a href="./?view=tramo&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
                 <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
-				<td><a href="./?view=Eliminar_Carretera&opt=Eliminar_Carretera&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
+				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
+                <td><a href="./?view=Eliminar_Carretera&opt=Eliminar_Carretera&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
 			</tr>
             <?php
                 }
@@ -151,7 +154,8 @@ if(!isset($_SESSION['user_id']))
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><a href="./?view=tramo&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
                 <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
-				<td><a href="./?view=Eliminar_Carretera&opt=Eliminar_Carretera&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
+				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
+                <td><a href="./?view=Eliminar_Carretera&opt=Eliminar_Carretera&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
 			</tr>
             <?php
                 }
@@ -189,7 +193,8 @@ if(!isset($_SESSION['user_id']))
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><a href="./?view=tramo&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
                 <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
-				<td><a href="./?view=Eliminar_Carretera&opt=Eliminar_Carretera&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
+				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
+                <td><a href="./?view=Eliminar_Carretera&opt=Eliminar_Carretera&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
 			</tr>
             <?php
                 }
@@ -231,7 +236,8 @@ if(!isset($_SESSION['user_id']))
                         <td><?php echo $row->Carretera_Posterior; ?></td>
                         <td><a href="./?view=tramo&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
                         <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
-						<td><a href="./?view=Eliminar_Carretera&opt=Eliminar_Carretera&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
+						<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
+                        <td><a href="./?view=Eliminar_Carretera&opt=Eliminar_Carretera&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
 					</tr>
             <?php
                 }

@@ -17,6 +17,7 @@ class ComunaData extends Extra{
 		$this->Tramo_id = "";
         $this->Comuna_Anterior = "";
         $this->Comuna_Posterior = "";
+		//$this->status;
 	}
 
 
@@ -39,7 +40,7 @@ class ComunaData extends Extra{
             LEFT JOIN
                 comunas cp ON c.Comuna_Posterior = cp.id_Comuna
             WHERE
-                t.Nombre = '$Tramo';";
+                t.Nombre = '$Tramo' and c.status=1";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ComunaData()); 
 	}
@@ -48,7 +49,7 @@ class ComunaData extends Extra{
 		$sql = "select c.id_Comuna as id_Comuna, c.Nombre as Nombre 
 		FROM comunas c
 		INNER JOIN tramos t ON c.Tramo_id = t.id_Tramo
-		WHERE t.id_tramo = '$id_tramo'
+		WHERE t.id_tramo = '$id_tramo' and c.status=1
 		ORDER BY c.Pos_Final DESC
 		LIMIT 1;";
 		$query = Executor::doit($sql);

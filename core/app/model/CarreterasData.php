@@ -15,25 +15,25 @@ class CarreterasData extends Extra{
 		$this->Categoria_id = "";
 		$this->Carretera_Anterior = "";
 		$this->Carretera_Posterior = "";
-
+		//$this->status;
 	}
 
 
 	public static function getByID($id_Carretera)
 	{
-		$sql = "select * from carreteras where id_Carretera=".$id_Carretera;
+		$sql = "select * from carreteras where status=1 and id_Carretera=".$id_Carretera;
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new CarreterasData()); 
 	}
 
 	public static function getByNombre($nombre){
-		$sql = "select * from carreteras where Nombre='$nombre'";
+		$sql = "select * from carreteras where status=1 and Nombre='$nombre'";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new CarreterasData());
 	}
 
 	public static function getByPosterior($posterior){
-		$sql = "select * from carreteras where id_Carretera='$posterior'";
+		$sql = "select * from carreteras where status=1 and id_Carretera='$posterior'";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new CarreterasData());
 	}
@@ -49,7 +49,8 @@ class CarreterasData extends Extra{
 				carreteras c
 			LEFT JOIN categorias cat ON c.Categoria_id = cat.id_Categoria
 			LEFT JOIN carreteras ca ON c.Carretera_Anterior = ca.id_Carretera
-			LEFT JOIN carreteras cp ON c.Carretera_Posterior = cp.id_Carretera;";
+			LEFT JOIN carreteras cp ON c.Carretera_Posterior = cp.id_Carretera
+			where c.status=1;";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new CarreterasData());
 	}
@@ -66,7 +67,7 @@ class CarreterasData extends Extra{
 			LEFT JOIN categorias cat ON c.Categoria_id = cat.id_Categoria
 			LEFT JOIN carreteras ca ON c.Carretera_Anterior = ca.id_Carretera
 			LEFT JOIN carreteras cp ON c.Carretera_Posterior = cp.id_Carretera
-				where c.Categoria_id =".$id_cat;
+				where c.status=1 and c.Categoria_id =".$id_cat;
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new CarreterasData());
 	}

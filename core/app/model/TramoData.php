@@ -17,6 +17,7 @@ class TramoData extends Extra{
 		$this->Tramo_Posterior = "";
         $this->Kilometros = "";
         $this->Carretera_id = "";
+		//$this->status;
 	}
 
 
@@ -36,7 +37,7 @@ class TramoData extends Extra{
 			LEFT JOIN tramos ta ON t.Tramo_Anterior = ta.id_Tramo
 			LEFT JOIN tramos tp ON t.Tramo_Posterior = tp.id_Tramo 
             WHERE
-                c.Nombre = '$Carretera'";
+                c.Nombre = '$Carretera' and t.status=1;";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new TramoData()); 
 	}
@@ -45,7 +46,7 @@ class TramoData extends Extra{
 		$sql = "select t.id_Tramo as id_Tramo, t.Nombre as Nombre
 		FROM tramos t
 		INNER JOIN carreteras c ON t.Carretera_id = c.id_Carretera
-		WHERE c.id_Carretera = '$id_carretera'
+		WHERE c.id_Carretera = '$id_carretera' and t.status=1
 		ORDER BY t.Pos_Final DESC
 		LIMIT 1;";
 		$query = Executor::doit($sql);

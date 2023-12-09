@@ -12,6 +12,7 @@ CREATE TABLE carreteras (
     Categoria_id INT NOT NULL,
     Carretera_Anterior INT,
     Carretera_Posterior INT,
+    status int default 1,
     FOREIGN KEY (Categoria_id) REFERENCES categorias(id_Categoria),
     FOREIGN KEY (Carretera_Anterior) REFERENCES carreteras(id_Carretera),
     FOREIGN KEY (Carretera_Posterior) REFERENCES carreteras(id_Carretera)
@@ -26,6 +27,7 @@ CREATE TABLE tramos (
     Tramo_Posterior INT,
     Kilometros DECIMAL(10, 2) NOT NULL,
     Carretera_id INT,
+    status int default 1,
     FOREIGN KEY (Tramo_Anterior) REFERENCES tramos(id_Tramo),
     FOREIGN KEY (Tramo_Posterior) REFERENCES tramos(id_Tramo),
     FOREIGN KEY (Carretera_id) REFERENCES carreteras(id_Carretera)
@@ -40,6 +42,7 @@ CREATE TABLE comunas (
     Tramo_id INT,
     Comuna_Anterior INT,
     Comuna_Posterior INT,
+    status int default 1,
     FOREIGN KEY (Tramo_id) REFERENCES tramos(id_Tramo),
     FOREIGN KEY (Comuna_Anterior) REFERENCES comunas(id_Comuna),
     FOREIGN KEY (Comuna_Posterior) REFERENCES comunas(id_Comuna)

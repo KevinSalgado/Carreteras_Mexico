@@ -134,7 +134,7 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "all"){
 	                  </div>
 	                  <div class="form-group col-md-6">
 	                     <label class="form-label" for="lname">Last Name:</label>
-	                     <input type="text" class="form-control" id="lname"  name="apellido" placeholder="Last Name">
+	                     <input type="text" class="form-control" id="lname"  name="apellido" placeholder="apellido">
 	                  </div>
 	                  
 	                  <div class="form-group col-md-12">
@@ -175,7 +175,7 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "all"){
 		if(!isset($_GET["id"]) or $_GET["id"] == "")
 		{
 			Core::addToastr('info',"Ups un error");			
-			Core::redir("./?view=users&opt=all");
+			Core::redir("./?view=home_admin");
 
 		}
 

@@ -14,6 +14,7 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "add"){
 
 		$u->nombre = $_POST['nombre'];
 		$u->email = $_POST['email'];
+		$u->apellido = $_POST['apellido'];
 		$u->username = $_POST['username'];
 		$u->password = sha1(md5($_POST['password']));
 		$u->kind = 1;
@@ -22,7 +23,7 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "add"){
 		$u->add();
 
 		Core::addToastr('success','Usuario agregado con Exito .!');
-		Core::redir("./?view=users&opt=all");
+		Core::redir("./?view=home_admin");
 
 	}else{
 
@@ -53,7 +54,7 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "add"){
 		}
 
 		Core::addToastr('success','Usuario actualizado con Exito .!');
-		Core::redir("./?view=users&opt=all");
+		Core::redir("./?view=home_admin");
 
 
 }else if(isset($_GET["opt"]) && $_GET["opt"] == "delete" && 

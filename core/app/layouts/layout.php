@@ -784,6 +784,8 @@
                         <li><a class="dropdown-item" href="../dashboard/app/user-privacy-setting.html">Privacy Setting</a></li>
                     -->
                         <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="./?view=users&opt=add">Añadir Usuario</a></li>
+                        <li><a class="dropdown-item" href="./?view=users&opt=edit&id=<?php echo $user->id;?>">Actualizar Usuario</a></li>
                         <li><a class="dropdown-item" href="./?action=access&opt=logout">Cerrar sesión</a></li>
                         <!-- <li><a class="dropdown-item" href="./?action=access&opt=logout">Cerrar Sesion</a></li> -->
                       </ul>

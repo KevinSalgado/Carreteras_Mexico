@@ -10,6 +10,7 @@ class UserData extends Extra{
 	public function __construct(){
 		$this->extra_fields = array();
 		$this->extra_fields_strings = array();
+		$this->id="";
 		$this->nombre = "";
 		$this->username = "";
 		$this->password = "";

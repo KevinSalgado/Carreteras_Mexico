@@ -17,12 +17,19 @@ class ComunaData extends Extra{
 		$this->Tramo_id = "";
         $this->Comuna_Anterior = "";
         $this->Comuna_Posterior = "";
-		//$this->status;
+		$this->status = "";
 	}
 
 	public static function getByID($id_Comuna)
 	{
 		$sql = "select * from comunas where status=1 and id_Comuna=".$id_Comuna;
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new ComunaData()); 
+	}
+
+	public static function getByID_Admin($id_Comuna)
+	{
+		$sql = "select * from comunas where id_Comuna=".$id_Comuna;
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new ComunaData()); 
 	}
@@ -47,6 +54,31 @@ class ComunaData extends Extra{
                 comunas cp ON c.Comuna_Posterior = cp.id_Comuna
             WHERE
                 t.Nombre = '$Tramo' and c.status=1";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new ComunaData()); 
+	}
+
+	public static function getByTramo_Admin($Tramo)
+	{
+        $sql = "select
+            c.id_Comuna,
+            c.Nombre AS Nombre_Comuna,
+            c.Pos_Inicio,
+            c.Pos_Final,
+            c.Kilometros AS Kilometros,
+            ca.Nombre AS Comuna_Anterior,
+            cp.Nombre AS Comuna_Posterior,
+			c.status AS status
+            FROM
+                comunas c
+            JOIN
+                tramos t ON t.id_Tramo = c.Tramo_id
+            LEFT JOIN
+                comunas ca ON c.Comuna_Anterior = ca.id_Comuna
+            LEFT JOIN
+                comunas cp ON c.Comuna_Posterior = cp.id_Comuna
+            WHERE
+                t.Nombre = '$Tramo'";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ComunaData()); 
 	}
@@ -89,6 +121,12 @@ class ComunaData extends Extra{
 		return Model::one($query[0],new ComunaData());
 	}
 
+	public static function getByNombre_Admin($nombre){
+		$sql = "select * from comunas where Nombre='$nombre'";
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new ComunaData());
+	}
+
 	public function add(){
 		$sql = "insert into comunas (Nombre, Kilometros, Pos_Inicio, Pos_Final, Tramo_id, Comuna_Anterior, Comuna_Posterior) value
 		 (\"$this->Nombre\",\"$this->Kilometros\",\"$this->Pos_Inicio\",\"$this->Pos_Final\",
@@ -103,6 +141,11 @@ class ComunaData extends Extra{
 
 		return Executor::doit($sql);
 
+	}
+
+	public function	updateOne($key,$val){
+		$sql  = "update comunas set $key= \"$val\" where id_Comuna=".$this->id_Comuna;
+		return Executor::doit($sql);
 	}
 
 	// public static function getByCat($id_cat){

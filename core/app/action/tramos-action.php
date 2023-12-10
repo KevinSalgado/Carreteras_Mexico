@@ -65,6 +65,21 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "anadir"){
 		echo "NO";
 	}
 
+} else if(isset($_GET["opt"]) && $_GET["opt"] == "eliminar"){
+	$user = TramoData::getByNombre_Admin($_GET['Tramo']);
+
+	$user->updateOne("status",0);
+
+	Core::addToastr('warning','Tramo desactivado con Exito !');
+	Core::redir("./?view=home_admin");
+}else if(isset($_GET["opt"]) && $_GET["opt"] == "activar"){
+	$user = TramoData::getByNombre_Admin($_GET['Tramo']);
+
+	$user->updateOne("status",1);
+
+	Core::addToastr('warning','Tramo activado con Exito !');
+	Core::redir("./?view=home_admin");
+
 }
 
 

@@ -3,7 +3,7 @@
         if(!isset($_SESSION['user_id']))
 	        Core::redir("./");
         //validar si es numero
-			$comuna = ComunaData::getByTramo($_GET['Comuna']);
+			$comuna = ComunaData::getByTramo_Admin($_GET['Comuna']);
 			$found = false;
 			if($comuna!=null){
 					$found=true;
@@ -23,6 +23,7 @@ if($found){
                 <th scope="col">Comuna anterior</th>
                 <th scope="col">Comuna posterior</th>
                 <th scope="col">Kilometros</th>
+                <th scope="col">Estatus</th>
             </tr>
             </thead>
             <tbody>
@@ -36,7 +37,10 @@ if($found){
                 <td><?php echo $row->Comuna_Anterior; ?></td>
                 <td><?php echo $row->Comuna_Posterior; ?></td>
                 <td><?php echo $row->Kilometros; ?></td>
+                <td><?php echo ($row->status == 1) ? 'Activo' : 'Inactivo'; ?></td>
                 <td><a href="./?view=editar_comuna&opt=editar&Comuna=<?php echo $row->Nombre_Comuna;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
+                <td><a href="./?action=comuna&opt=eliminar&Comuna=<?php echo $row->Nombre_Comuna;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
+                <td><a href="./?action=comuna&opt=activar&Comuna=<?php echo $row->Nombre_Comuna;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Activar </a> </td>
             </tr>
             <?php
                 }

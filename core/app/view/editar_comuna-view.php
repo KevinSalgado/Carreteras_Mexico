@@ -117,6 +117,8 @@ if($found){
 </div>
 
 <?php
+} else {
+	echo "No puedes editar una Comuna eliminada/desactivada";
 }
 }
 ?>

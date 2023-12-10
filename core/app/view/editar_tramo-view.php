@@ -119,6 +119,8 @@ if($found){
 </div>
 
 <?php
+}else {
+	echo "No puedes editar un tramo eliminado/desactivado";
 }
 }
 ?>

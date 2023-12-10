@@ -17,7 +17,7 @@ class TramoData extends Extra{
 		$this->Tramo_Posterior = "";
         $this->Kilometros = "";
         $this->Carretera_id = "";
-		//$this->status;
+		$this->status = "";
 	}
 
 
@@ -49,6 +49,28 @@ class TramoData extends Extra{
 		return Model::many($query[0],new TramoData()); 
 	}
 
+	public static function getByCarre_Admin($Carretera)
+	{
+        $sql = "select
+                t.id_Tramo,
+                t.Nombre AS Nombre_Tramo,
+                t.Pos_Inicio,
+                t.Pos_Final,
+                t.Kilometros AS Kilometros_Tramo,
+                ta.Nombre AS Tramo_Anterior,
+                tp.Nombre AS Tramo_Posterior,
+				t.status AS status
+            FROM
+                carreteras c
+            JOIN tramos t ON c.id_Carretera = t.Carretera_id
+			LEFT JOIN tramos ta ON t.Tramo_Anterior = ta.id_Tramo
+			LEFT JOIN tramos tp ON t.Tramo_Posterior = tp.id_Tramo 
+            WHERE
+                c.Nombre = '$Carretera';";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new TramoData()); 
+	}
+
 	public static function getLastTramo($id_carretera){
 		$sql = "select t.id_Tramo as id_Tramo, t.Nombre as Nombre
 		FROM tramos t
@@ -62,6 +84,12 @@ class TramoData extends Extra{
 
 	public static function getByNombre($nombre){
 		$sql = "select * from tramos where status=1 and Nombre='$nombre'";
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new TramoData());
+	}
+
+	public static function getByNombre_Admin($nombre){
+		$sql = "select * from tramos where Nombre='$nombre'";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new TramoData());
 	}
@@ -100,6 +128,11 @@ class TramoData extends Extra{
 
 		return Executor::doit($sql);
 
+	}
+
+	public function	updateOne($key,$val){
+		$sql  = "update tramos set $key= \"$val\" where id_Tramo=".$this->id_Tramo;
+		return Executor::doit($sql);
 	}
 
 	// public static function getByCat($id_cat){

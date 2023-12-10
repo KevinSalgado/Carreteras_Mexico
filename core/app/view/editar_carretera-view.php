@@ -103,6 +103,8 @@ if($found){
 </div>
 
 <?php
+} else {
+	echo "No puedes editar una carretera eliminada/desactivada";
 }
 }
 ?>

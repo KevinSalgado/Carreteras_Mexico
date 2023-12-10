@@ -66,6 +66,21 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "anadir"){
 		echo "NO";
 	}
 
+}else if(isset($_GET["opt"]) && $_GET["opt"] == "eliminar"){
+	$user = ComunaData::getByNombre_Admin($_GET['Comuna']);
+
+	$user->updateOne("status",0);
+
+	Core::addToastr('warning','Comuna desactivada con Exito !');
+	Core::redir("./?view=home_admin");
+}else if(isset($_GET["opt"]) && $_GET["opt"] == "activar"){
+	$user = ComunaData::getByNombre_Admin($_GET['Comuna']);
+
+	$user->updateOne("status",1);
+
+	Core::addToastr('warning','Comuna activado con Exito !');
+	Core::redir("./?view=home_admin");
+
 }
 
 

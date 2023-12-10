@@ -15,7 +15,7 @@ class CarreterasData extends Extra{
 		$this->Categoria_id = "";
 		$this->Carretera_Anterior = "";
 		$this->Carretera_Posterior = "";
-		//$this->status;
+		$this->status = "";
 	}
 
 
@@ -28,6 +28,12 @@ class CarreterasData extends Extra{
 
 	public static function getByNombre($nombre){
 		$sql = "select * from carreteras where status=1 and Nombre='$nombre'";
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new CarreterasData());
+	}
+
+	public static function getByNombre_Admin($nombre){
+		$sql = "select * from carreteras where Nombre='$nombre'";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new CarreterasData());
 	}
@@ -55,6 +61,23 @@ class CarreterasData extends Extra{
 		return Model::many($query[0],new CarreterasData());
 	}
 
+	public static function getAll_Admin(){
+		$sql = "select
+				c.Nombre AS Carretera,
+				c.Kilometros AS Kilometros,
+				cat.Nombre AS Categoria,
+				ca.Nombre AS Carretera_Anterior,
+				cp.Nombre AS Carretera_Posterior,
+				c.status AS status
+			FROM
+				carreteras c
+			LEFT JOIN categorias cat ON c.Categoria_id = cat.id_Categoria
+			LEFT JOIN carreteras ca ON c.Carretera_Anterior = ca.id_Carretera
+			LEFT JOIN carreteras cp ON c.Carretera_Posterior = cp.id_Carretera;";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new CarreterasData());
+	}
+
 	public static function getByCat($id_cat){
 		$sql = "select
 				c.Nombre AS Carretera,
@@ -68,6 +91,24 @@ class CarreterasData extends Extra{
 			LEFT JOIN carreteras ca ON c.Carretera_Anterior = ca.id_Carretera
 			LEFT JOIN carreteras cp ON c.Carretera_Posterior = cp.id_Carretera
 				where c.status=1 and c.Categoria_id =".$id_cat;
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new CarreterasData());
+	}
+
+	public static function getByCat_Admin($id_cat){
+		$sql = "select
+				c.Nombre AS Carretera,
+				c.Kilometros AS Kilometros,
+				cat.Nombre AS Categoria,
+				ca.Nombre AS Carretera_Anterior,
+				cp.Nombre AS Carretera_Posterior,
+				c.status AS status
+			FROM
+				carreteras c
+			LEFT JOIN categorias cat ON c.Categoria_id = cat.id_Categoria
+			LEFT JOIN carreteras ca ON c.Carretera_Anterior = ca.id_Carretera
+			LEFT JOIN carreteras cp ON c.Carretera_Posterior = cp.id_Carretera
+				where c.Categoria_id =".$id_cat;
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new CarreterasData());
 	}
@@ -95,6 +136,11 @@ class CarreterasData extends Extra{
 		print $sql;
 		return Executor::doit($sql);
 
+	}
+
+	public function	updateOne($key,$val){
+		$sql  = "update carreteras set $key= \"$val\" where id_Carretera=".$this->id_Carretera;
+		return Executor::doit($sql);
 	}
 
 	// public function	updatePass(){

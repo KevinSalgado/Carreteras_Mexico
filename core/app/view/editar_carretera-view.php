@@ -1,6 +1,8 @@
 <?php
 
 if(isset($_GET["opt"]) && $_GET["opt"] == "editar"){
+	if(!isset($_SESSION['user_id']))
+		Core::redir("./");
 		//Todas las validaciones
 		if(!isset($_GET["Carretera"]) or $_GET["Carretera"] == "")
 		{
@@ -59,6 +61,7 @@ if($found){
 	               <div class="form-group col-md-12">
                         <label class="form-label" for="Carretera_Anterior">Carretera anterior:</label>
                         <select class="form-control" id="Carretera_Anterior" name="Carretera_Anterior">
+						<option value=<?php  echo "null" ;?> <?php echo ($Carretera->Carretera_Anterior === null) ? 'selected' : ''; ?>>Nulo</option>
                         <?php
 							$contador = 1;
 		                    foreach ($listaCarreteras as $key => $row) {
@@ -76,7 +79,8 @@ if($found){
                     <div class="form-group col-md-12">
                         <label class="form-label" for="Carretera_Posterior">Carretera posterior:</label>
                         <select class="form-control" id="Carretera_Posterior" value="<?php echo $Carretera->Carretera_Posterior; ?>" name="Carretera_Posterior">
-                        <?php
+                        <option value=<?php  echo "null" ;?> <?php echo ($Carretera->Carretera_Posterior === null) ? 'selected' : ''; ?>>Nulo</option>
+						<?php
 							$contador = 1;
 		                    foreach ($listaCarreteras as $key => $row) {
                                 $selected = ($contador == $Carretera->Carretera_Posterior) ? 'selected' : '';

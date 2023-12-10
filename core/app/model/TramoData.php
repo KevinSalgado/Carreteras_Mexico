@@ -9,7 +9,7 @@ class TramoData extends Extra{
 	public function __construct(){
 		$this->extra_fields = array();
 		$this->extra_fields_strings = array();
-        //$this->id = "";
+        $this->id_Tramo = "";
 		$this->Nombre = "";
 		$this->Pos_Inicio = "";
 		$this->Pos_Final = "";
@@ -20,6 +20,13 @@ class TramoData extends Extra{
 		//$this->status;
 	}
 
+
+	public static function getByID($id_Tramo)
+	{
+		$sql = "select * from tramos where status=1 and id_Tramo=".$id_Tramo;
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new TramoData()); 
+	}
 
 	public static function getByCarre($Carretera)
 	{
@@ -75,6 +82,14 @@ class TramoData extends Extra{
 	LEFT JOIN tramos tp ON t.Tramo_Posterior = tp.id_Tramo ;";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new TramoData());
+	}
+
+	public function	update(){
+		$sql  = "update tramos set Nombre= \"$this->Nombre\",Kilometros= $this->Kilometros, Pos_Inicio= $this->Pos_Inicio, Pos_Final= $this->Pos_Final,Tramo_Anterior= " . ($this->Tramo_Anterior === "null" ? "NULL" : $this->Tramo_Anterior) .  ", Tramo_Posterior= " . ($this->Tramo_Posterior === "null" ? "NULL" : $this->Tramo_Posterior) .  "
+		where id_Tramo=".$this->id_Tramo;
+		print $sql;
+		return Executor::doit($sql);
+
 	}
 
 	// public static function getByCat($id_cat){

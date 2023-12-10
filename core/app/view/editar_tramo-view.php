@@ -33,8 +33,8 @@ if($found){
 	      </div>
 	      <div class="card-body">
 	         <div class="new-user-info">
-	            <form method="post" action="./?action=carreteras&opt=editar">
-                <input type="hidden" name="id_Carretera" value="<?php echo $tramo->id_Tramo;?>">
+	            <form method="post" action="./?action=tramos&opt=editar">
+                <input type="hidden" name="id_Tramo" value="<?php echo $tramo->id_Tramo;?>">
 	               <div class="row">
 	                  <div class="form-group col-md-6">
 	                     <label class="form-label" for="fname">Nombre del tramo:</label>
@@ -77,6 +77,7 @@ if($found){
 	               <div class="form-group col-md-12">
                         <label class="form-label" for="Tramo_Anterior">Tramo anterior:</label>
                         <select class="form-control" id="Tramo_Anterior" name="Tramo_Anterior">
+                        <option value=<?php  echo "null" ;?> <?php echo ($tramo->Tramo_Anterior === null) ? 'selected' : ''; ?>>Nulo</option>
                         <?php
 							$contador = 1;
 		                    foreach ($listaTramos as $key => $row) {
@@ -94,6 +95,7 @@ if($found){
                     <div class="form-group col-md-12">
                         <label class="form-label" for="Tramo_Posterior">Tramo posterior:</label>
                         <select class="form-control" id="Tramo_Posterior" name="Tramo_Posterior">
+                        <option value=<?php  echo "null" ;?> <?php echo ($tramo->Tramo_Posterior === null) ? 'selected' : ''; ?>>Nulo</option>
                         <?php
 							$contador = 1;
 		                    foreach ($listaTramos as $key => $row) {

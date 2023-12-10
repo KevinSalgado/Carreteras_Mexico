@@ -608,6 +608,15 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./?view=anadir_comuna&opt=anadir">
+                                <i class="bi bi-house">
+
+                                </i>
+                                <span class="item-name">Añadir comunas</span>
+                            </a>
+                        </li>
+
                         
                         <li><hr class="hr-horizontal"></li>
                         <!--<li class="nav-item static-item">

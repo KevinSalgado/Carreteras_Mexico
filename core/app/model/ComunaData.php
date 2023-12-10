@@ -56,21 +56,35 @@ class ComunaData extends Extra{
 		return Model::one($query[0],new ComunaData());
 	}
 
-	// public static function getAll(){
-	// 	$sql = "select
-	// 			c.Nombre AS Carretera,
-	// 			c.Kilometros AS Kilometros,
-	// 			cat.Nombre AS Categoria,
-	// 			ca.Nombre AS Carretera_Anterior,
-	// 			cp.Nombre AS Carretera_Posterior
-	// 		FROM
-	// 			carreteras c
-	// 		LEFT JOIN categorias cat ON c.Categoria_id = cat.id_Categoria
-	// 		LEFT JOIN carreteras ca ON c.Carretera_Anterior = ca.id_Carretera
-	// 		LEFT JOIN carreteras cp ON c.Carretera_Posterior = cp.id_Carretera;";
-	// 	$query = Executor::doit($sql);
-	// 	return Model::many($query[0],new CarreterasData());
-	// }
+	public static function getAll(){
+		$sql = "select
+		c.id_Comuna,
+		c.Nombre AS Nombre_Comuna,
+		c.Pos_Inicio,
+		c.Pos_Final,
+		c.Kilometros AS Kilometros,
+		ca.Nombre AS Comuna_Anterior,
+		cp.Nombre AS Comuna_Posterior
+		FROM
+			comunas c
+		JOIN
+			tramos t ON t.id_Tramo = c.Tramo_id
+		LEFT JOIN
+			comunas ca ON c.Comuna_Anterior = ca.id_Comuna
+		LEFT JOIN
+			comunas cp ON c.Comuna_Posterior = cp.id_Comuna;";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new ComunaData());
+	}
+
+	public function add(){
+		$sql = "insert into comunas (Nombre, Kilometros, Pos_Inicio, Pos_Final, Tramo_id, Comuna_Anterior, Comuna_Posterior) value
+		 (\"$this->Nombre\",\"$this->Kilometros\",\"$this->Pos_Inicio\",\"$this->Pos_Final\",
+		 \"$this->Tramo_id\", \"$this->Comuna_Anterior\", \"$this->Comuna_Posterior\")";
+		print $sql;
+		return Executor::doit($sql);
+
+	}
 
 	// public static function getByCat($id_cat){
 	// 	$sql = "select
@@ -96,14 +110,7 @@ class ComunaData extends Extra{
 	// // 	return Model::many($query[0],new UserData()); 
 	// // }
 
-	// public function add(){
-	// 	$sql = "insert into carreteras (Nombre, Kilometros, Categoria_id, Carretera_Anterior, Carretera_Posterior) value
-	// 	 (\"$this->Nombre\",\"$this->Kilometros\",\"$this->Categoria_id\",\"$this->Carretera_Anterior\",
-	// 	 \"$this->Carretera_Posterior\"";
-
-	// 	return Executor::doit($sql);
-
-	// }
+	
 
 	// public function	update(){
 	// 	$sql  = "update user set nombre= \"$this->nombre\",apellido= \"$this->apellido\",email= \"$this->email\",username= \"$this->username\" where id=".$this->id;

@@ -6,26 +6,26 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "anadir"){
 
 
 
-	if(isset($_POST["Nombre"]) and isset($_POST["Kilometros"]) and isset($_POST["Carretera_id"])
-    and isset($_POST["Tramo_Anterior"]) and isset($_POST["Tramo_Posterior"]) and isset($_POST["Pos_Inicio"]) and isset($_POST["Pos_Final"])){
+	if(isset($_POST["Nombre"]) and isset($_POST["Kilometros"]) and isset($_POST["Tramo_id"])
+    and isset($_POST["Comuna_Anterior"]) and isset($_POST["Comuna_Posterior"]) and isset($_POST["Pos_Inicio"]) and isset($_POST["Pos_Final"])){
 
-		$u = new TramoData();
+		$u = new ComunaData();
 
 		$u->Nombre = $_POST["Nombre"];
 		$u->Pos_Inicio = $_POST["Pos_Inicio"];
 		$u->Pos_Final = $_POST["Pos_Final"];
-		$u->Tramo_Anterior = $_POST["Tramo_Anterior"];
-		$u->Tramo_Posterior = $_POST["Tramo_Posterior"];
+		$u->Comuna_Anterior = $_POST["Comuna_Anterior"];
+		$u->Comuna_Posterior = $_POST["Comuna_Posterior"];
         $u->Kilometros = $_POST["Kilometros"];
-        $u->Carretera_id = $_POST["Carretera_id"];
+        $u->Tramo_id = $_POST["Tramo_id"];
 
 		if(($u->Nombre and $u->Kilometros and ($u->Pos_Inicio or $u->Pos_Inicio==0) and $u->Pos_Final) != null ){
 			$u->add();
-			Core::addToastr('success','Tramo agregada con exito!');
+			Core::addToastr('success','Comuna agregada con exito!');
 			Core::redir("./?view=home_admin");
 		} else {
-			Core::addToastr("error","Completa el formulario para poder agregar un tramo");
-			Core::redir("./?view=anadir_tramos&opt=anadir");
+			Core::addToastr("error","Completa el formulario para poder agregar una comuna");
+			//Core::redir("./?view=anadir_comuna&opt=anadir");
 		}
 
 		
@@ -55,7 +55,7 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "anadir"){
 			Core::redir("./?view=home_admin");
 		} else {
 			Core::addToastr("error","Completa el formulario para poder actualizar un tramo");
-			Core::redir("./?view=editar_tramo&opt=editar");
+			Core::redir("./?view=editar_carretera&opt=editar");
 		}
 
 		

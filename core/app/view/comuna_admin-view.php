@@ -36,7 +36,7 @@ if($found){
                 <td><?php echo $row->Comuna_Anterior; ?></td>
                 <td><?php echo $row->Comuna_Posterior; ?></td>
                 <td><?php echo $row->Kilometros; ?></td>
-                <td><a href="./?view=editar_comuna&opt=comuna&Comuna=<?php echo $row->Nombre_Comuna;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
+                <td><a href="./?view=editar_comuna&opt=editar&Comuna=<?php echo $row->Nombre_Comuna;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
             </tr>
             <?php
                 }

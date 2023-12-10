@@ -20,6 +20,12 @@ class ComunaData extends Extra{
 		//$this->status;
 	}
 
+	public static function getByID($id_Comuna)
+	{
+		$sql = "select * from comunas where status=1 and id_Comuna=".$id_Comuna;
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new ComunaData()); 
+	}
 
 	public static function getByTramo($Tramo)
 	{
@@ -77,11 +83,24 @@ class ComunaData extends Extra{
 		return Model::many($query[0],new ComunaData());
 	}
 
+	public static function getByNombre($nombre){
+		$sql = "select * from comunas where status=1 and Nombre='$nombre'";
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new ComunaData());
+	}
+
 	public function add(){
 		$sql = "insert into comunas (Nombre, Kilometros, Pos_Inicio, Pos_Final, Tramo_id, Comuna_Anterior, Comuna_Posterior) value
 		 (\"$this->Nombre\",\"$this->Kilometros\",\"$this->Pos_Inicio\",\"$this->Pos_Final\",
 		 \"$this->Tramo_id\", \"$this->Comuna_Anterior\", \"$this->Comuna_Posterior\")";
 		print $sql;
+		return Executor::doit($sql);
+
+	}
+
+	public function	update(){
+		$sql  = "update comunas set Nombre= \"$this->Nombre\",Kilometros= \"$this->Kilometros\",Pos_Inicio= \"$this->Pos_Inicio\",Pos_Final=\"$this->Pos_Final\", Tramo_id=\"$this->Tramo_id\",Comuna_Anterior=\"$this->Comuna_Anterior\",Comuna_Posterior=\"$this->Comuna_Posterior\" where id_Comuna=".$this->id_Comuna;
+
 		return Executor::doit($sql);
 
 	}
@@ -109,15 +128,6 @@ class ComunaData extends Extra{
 	// // 	$query = Executor::doit($sql);
 	// // 	return Model::many($query[0],new UserData()); 
 	// // }
-
-	
-
-	// public function	update(){
-	// 	$sql  = "update user set nombre= \"$this->nombre\",apellido= \"$this->apellido\",email= \"$this->email\",username= \"$this->username\" where id=".$this->id;
-
-	// 	return Executor::doit($sql);
-
-	// }
 
 	// public function	updatePass(){
 	// 	$sql  = "update user set password= \"$this->password\" where id=".$this->id;

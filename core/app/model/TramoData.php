@@ -92,6 +92,16 @@ class TramoData extends Extra{
 
 	}
 
+	public function add(){
+		$sql = "insert into tramos (Nombre, Pos_Inicio, Pos_Final, Tramo_Anterior, Tramo_Posterior, Kilometros, Carretera_id) value
+		 (\"$this->Nombre\",$this->Pos_Inicio,$this->Pos_Final,$this->Tramo_Anterior,
+		 $this->Tramo_Posterior,$this->Kilometros,$this->Carretera_id)";
+
+
+		return Executor::doit($sql);
+
+	}
+
 	// public static function getByCat($id_cat){
 	// 	$sql = "select
 	// 			c.Nombre AS Carretera,

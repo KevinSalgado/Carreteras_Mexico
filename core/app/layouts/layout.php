@@ -595,7 +595,16 @@
                                 <i class="bi bi-house">
 
                                 </i>
-                                <span class="item-name">Anadir carreteras</span>
+                                <span class="item-name">Añadir carreteras</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./?view=anadir_tramos&opt=anadir">
+                                <i class="bi bi-house">
+
+                                </i>
+                                <span class="item-name">Añadir tramos</span>
                             </a>
                         </li>
 

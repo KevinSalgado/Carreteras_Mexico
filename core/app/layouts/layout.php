@@ -268,24 +268,7 @@
                                 <span class="mini-icon">-</span>
                             </a>
                         </li>-->
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-special" role="button" aria-expanded="false" aria-controls="sidebar-special">
-                                <i class="bi bi-gear">
-
-                                </i>
-                                <span class="item-name">Administracion</span>
-                                <i class="bi bi-chevron-right">
-                                    
-                                </i>
-                            </a>
-                            <ul class="sub-nav collapse" id="sidebar-special" data-bs-parent="#sidebar-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link " href="./?view=users&opt=all">
-                                      <i class="icon"><i class="bi bi-circle"></i> </i><i class="sidenav-mini-icon"> U </i><span class="item-name">Usuarios</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>                        
+                                         
                     </ul>
                     <!-- Sidebar Menu End -->        
                 </div>

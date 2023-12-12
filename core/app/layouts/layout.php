@@ -140,7 +140,7 @@
       </div>
 
     <?php elseif(!isset($_SESSION["user_id"])):?>
-        <aside class="sidebar sidebar-default sidebar-white sidebar-base navs-rounded-all ">
+        <aside class="sidebar sidebar-default sidebar-white sidebar-base navs-rounded-all sidebar-dark">
             <div class="sidebar-header d-flex align-items-center justify-content-start">
                 <a href="./" class="navbar-brand">
                     <!--Logo start-->
@@ -433,7 +433,7 @@
                         <img src="./assets/images/avatars/avtar_5.png" alt="User-Profile" class="theme-color-yellow-img img-fluid avatar avatar-50 avatar-rounded">
                         <img src="./assets/images/avatars/avtar_3.png" alt="User-Profile" class="theme-color-pink-img img-fluid avatar avatar-50 avatar-rounded">
                         <div class="caption ms-3 d-none d-md-block ">
-                            <!-- <h6 class="mb-0 caption-title"><?php //echo $user->nombre;?></h6> -->
+                            <h6 class="mb-0 caption-title">Invitado</h6>
                             <p class="mb-0 caption-sub-title"></p>
                         </div>
                       </a>
@@ -442,7 +442,7 @@
                         <li><a class="dropdown-item" href="../dashboard/app/user-privacy-setting.html">Privacy Setting</a></li>
                     -->
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="./?action=access&opt=login_redir">Sesión administrador</a></li>
+                        <li><a class="dropdown-item" href="./?action=access&opt=login_redir">Iniciar administrador</a></li>
                         <!-- <li><a class="dropdown-item" href="./?action=access&opt=logout">Cerrar Sesion</a></li> -->
                       </ul>
                     </li>
@@ -468,7 +468,7 @@
         <!-- offcanvas start -->
     <?php 
       else:?>
-      <aside class="sidebar sidebar-default sidebar-white sidebar-base navs-rounded-all ">
+      <aside class="sidebar sidebar-default sidebar-white sidebar-base navs-rounded-all sidebar-dark">
             <div class="sidebar-header d-flex align-items-center justify-content-start">
                 <a href="./" class="navbar-brand">
                     <!--Logo start-->

@@ -36,11 +36,12 @@ if(!isset($_SESSION['user_id']))
                 <td><?php echo $row->Carretera_Anterior; ?></td>
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><?php echo ($row->status == 1) ? 'Activo' : 'Inactivo'; ?></td>
-                <td><a href="./?view=tramo_admin&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
-                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
-				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
-                <td><a href="./?action=carreteras&opt=eliminar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Desactivar </a> </td>
-                <td><a href="./?action=carreteras&opt=activar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Activar </a> </td>	
+                <td><a href="./?view=tramo_admin&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-outline-gray btn-sm"><i class="fa fa-pencil"></i> Tramos </a> </td>
+                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-outline-gray btn-sm"><i class="fa fa-pencil"></i> Confluye </a> </td>
+				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Editar </a> </td>
+                <td><a href="./?action=carreteras&opt=eliminar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i> Desactivar </a> </td>
+                <td><a href="./?action=carreteras&opt=activar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Activar </a> </td>
+                	
             </tr>
             <?php
                 }
@@ -79,11 +80,11 @@ if(!isset($_SESSION['user_id']))
                 <td><?php echo $row->Carretera_Anterior; ?></td>
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><?php echo ($row->status == 1) ? 'Activo' : 'Inactivo'; ?></td>
-                <td><a href="./?view=tramo_admin&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
-                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
-				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
-                <td><a href="./?action=carreteras&opt=eliminar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
-                <td><a href="./?action=carreteras&opt=activar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Activar </a> </td>
+                <td><a href="./?view=tramo_admin&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-outline-gray btn-sm"><i class="fa fa-pencil"></i> Tramos </a> </td>
+                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-outline-gray btn-sm"><i class="fa fa-pencil"></i> Confluye </a> </td>
+				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Editar </a> </td>
+                <td><a href="./?action=carreteras&opt=eliminar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i> Eliminar </a> </td>
+                <td><a href="./?action=carreteras&opt=activar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Activar </a> </td>
             </tr>
             <?php
                 }
@@ -121,11 +122,11 @@ if(!isset($_SESSION['user_id']))
                 <td><?php echo $row->Carretera_Anterior; ?></td>
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><?php echo ($row->status == 1) ? 'Activo' : 'Inactivo'; ?></td>
-                <td><a href="./?view=tramo_admin&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
-                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
-				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
-                <td><a href="./?action=carreteras&opt=eliminar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
-                <td><a href="./?action=carreteras&opt=activar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Activar </a> </td>
+                <td><a href="./?view=tramo_admin&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-outline-gray btn-sm"><i class="fa fa-pencil"></i> Tramos </a> </td>
+                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-outline-gray btn-sm"><i class="fa fa-pencil"></i> Confluye </a> </td>
+				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Editar </a> </td>
+                <td><a href="./?action=carreteras&opt=eliminar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i> Eliminar </a> </td>
+                <td><a href="./?action=carreteras&opt=activar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Activar </a> </td>
             </tr>
             <?php
                 }
@@ -163,11 +164,11 @@ if(!isset($_SESSION['user_id']))
                 <td><?php echo $row->Carretera_Anterior; ?></td>
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><?php echo ($row->status == 1) ? 'Activo' : 'Inactivo'; ?></td>
-                <td><a href="./?view=tramo_admin&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
-                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
-				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
-                <td><a href="./?action=carreteras&opt=eliminar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
-                <td><a href="./?action=carreteras&opt=activar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Activar </a> </td>
+                <td><a href="./?view=tramo_admin&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-outline-gray btn-sm"><i class="fa fa-pencil"></i> Tramos </a> </td>
+                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-outline-gray btn-sm"><i class="fa fa-pencil"></i> Confluye </a> </td>
+				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Editar </a> </td>
+                <td><a href="./?action=carreteras&opt=eliminar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i> Eliminar </a> </td>
+                <td><a href="./?action=carreteras&opt=activar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Activar </a> </td>
             </tr>
             <?php
                 }
@@ -205,11 +206,11 @@ if(!isset($_SESSION['user_id']))
                 <td><?php echo $row->Carretera_Anterior; ?></td>
                 <td><?php echo $row->Carretera_Posterior; ?></td>
                 <td><?php echo ($row->status == 1) ? 'Activo' : 'Inactivo'; ?></td>
-                <td><a href="./?view=tramo_admin&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
-                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
-				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
-                <td><a href="./?action=carreteras&opt=eliminar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
-                <td><a href="./?action=carreteras&opt=activar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Activar </a> </td>
+                <td><a href="./?view=tramo_admin&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-outline-gray btn-sm"><i class="fa fa-pencil"></i> Tramos </a> </td>
+                <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-outline-gray btn-sm"><i class="fa fa-pencil"></i> Confluye </a> </td>
+				<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Editar </a> </td>
+                <td><a href="./?action=carreteras&opt=eliminar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i> Eliminar </a> </td>
+                <td><a href="./?action=carreteras&opt=activar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Activar </a> </td>
             </tr>
             <?php
                 }
@@ -251,11 +252,11 @@ if(!isset($_SESSION['user_id']))
                         <td><?php echo $row->Carretera_Anterior; ?></td>
                         <td><?php echo $row->Carretera_Posterior; ?></td>
                         <td><?php echo ($row->status == 1) ? 'Activo' : 'Inactivo'; ?></td>
-                        <td><a href="./?view=tramo_admin&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Tramos </a> </td>
-                        <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Confluye </a> </td>
-						<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar </a> </td>
-                        <td><a href="./?action=carreteras&opt=eliminar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Eliminar </a> </td>
-                        <td><a href="./?action=carreteras&opt=activar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Activar </a> </td>
+                        <td><a href="./?view=tramo_admin&opt=tramos&Carretera=<?php echo $row->Carretera;?>" class="btn btn-outline-gray btn-sm"><i class="fa fa-pencil"></i> Tramos </a> </td>
+                        <td><a href="./?view=confluye&opt=confluye&Carretera=<?php echo $row->Carretera;?>" class="btn btn-outline-gray btn-sm"><i class="fa fa-pencil"></i> Confluye </a> </td>
+						<td><a href="./?view=editar_carretera&opt=editar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Editar </a> </td>
+                        <td><a href="./?action=carreteras&opt=eliminar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i> Eliminar </a> </td>
+                        <td><a href="./?action=carreteras&opt=activar&Carretera=<?php echo $row->Carretera;?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Activar </a> </td>
                     </tr>
             <?php
                 }

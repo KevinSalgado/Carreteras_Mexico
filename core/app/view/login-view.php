@@ -33,7 +33,7 @@
                                   <!--logo End-->
                                                                                   
                                   
-                                  <h4 class="logo-title ms-3">Clase</h4>
+                                  <h4 class="logo-title ms-3">SCT</h4>
                                </a>
                                <h2 class="mb-2 text-center">INICIAR SESION</h2>
                                <p class="text-center">INGRESA TUS DATOS PARA INICIAR SESION.</p>
@@ -74,7 +74,7 @@
                    </div>
                 </div>
                 <div class="col-md-6 d-md-block d-none bg-primary p-0 mt-n1 vh-100 overflow-hidden">
-                   <img src="./assets/images/auth/01.png" class="img-fluid gradient-main animated-scaleX" alt="images">
+                   <img src="./assets/images/auth/fondo-login.png" class="img-fluid gradient-main animated-scaleX" alt="images">
                 </div>
              </div>
           </section>

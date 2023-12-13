@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>LB Hope UI | Dashboard</title>
+      <title>SCT</title>
       
       <!-- Favicon -->
       <link rel="shortcut icon" href="./assets/images/favicon.ico" />
@@ -133,7 +133,7 @@
                    </div>
                 </div>
                 <div class="col-md-6 d-md-block d-none bg-primary p-0 mt-n1 vh-100 overflow-hidden">
-                   <img src="./assets/images/auth/01.png" class="img-fluid gradient-main animated-scaleX" alt="images">
+                   <img src="./assets/images/auth/fondo-login.png" class="img-fluid gradient-main animated-scaleX" alt="images">
                 </div>
              </div>
           </section>
@@ -170,7 +170,7 @@
                     
                     
                     
-                    <h4 class="logo-title">LB-HOPE-UI</h4>
+                    <h4 class="logo-title">SCT</h4>
                 </a>
                 <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
                     <i class="icon">
@@ -304,7 +304,7 @@
                         </div>
                     </div>
                     <!--logo End-->
-                    <h4 class="logo-title">LB Hope UI</h4>
+                    <h4 class="logo-title"></h4>
                 </a>
                 <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
                     <i class="icon">
@@ -481,7 +481,7 @@
                     
                     
                     
-                    <h4 class="logo-title">LB-HOPE-UI</h4>
+                    <h4 class="logo-title">SCT</h4>
                 </a>
                 <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
                     <i class="icon">
@@ -506,7 +506,7 @@
                     -->
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./?view=home_admin">
-                                <i class="bi bi-house">
+                                <i class="bi bi-truck">
 
                                 </i>
                                 <span class="item-name">Carreteras</span>
@@ -575,7 +575,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./?view=anadir_carretera&opt=anadir">
-                                <i class="bi bi-house">
+                                <i class="bi bi-truck-front">
 
                                 </i>
                                 <span class="item-name">Añadir carreteras</span>
@@ -584,7 +584,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./?view=anadir_tramos&opt=anadir">
-                                <i class="bi bi-house">
+                                <i class="bi bi-truck-front">
 
                                 </i>
                                 <span class="item-name">Añadir tramos</span>
@@ -593,7 +593,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./?view=anadir_comuna&opt=anadir">
-                                <i class="bi bi-house">
+                                <i class="bi bi-truck-front">
 
                                 </i>
                                 <span class="item-name">Añadir comunas</span>
@@ -646,7 +646,7 @@
                         </div>
                     </div>
                     <!--logo End-->
-                    <h4 class="logo-title">LB Hope UI</h4>
+                    <h4 class="logo-title">SCT</h4>
                 </a>
                 <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
                     <i class="icon">

@@ -202,22 +202,16 @@
                     <div class="carousel-item">
                         <img src="imagenes/carros1.jpg">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Carreteras México</h5>
-                            <p>Imagenes representativas de carreteras.</p>
                         </div>
                     </div>
                     <div class="carousel-item active">
                        <img src="imagenes/carros2.jpg">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Carreteras México</h5>
-                            <p>Imagenes representativas de carreteras.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="imagenes/carros3.jpg">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Carreteras México</h5>
-                            <p>Imagenes representativas de carreteras.</p>
                         </div>
                     </div>
                 </div>

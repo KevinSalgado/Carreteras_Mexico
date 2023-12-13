@@ -46,15 +46,20 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "add"){
 
 		$u->update();
 
-		if(isset($_POST['password']) and $_POST['password']!=''  ){
+		if(isset($_POST['password']) and $_POST['password']!='' and isset($_POST['repeatPassword']) ){
+			$password1 = sha1(md5($_POST['password']));
+			$password2 = sha1(md5($_POST['repeatPassword']));
 
-			$u->password = sha1(md5($_POST['password']));
-
-			$u->updatePass();
+			if($password1 == $password2){
+				$u->password = sha1(md5($_POST['password']));
+				$u->updatePass();
+				Core::addToastr('success','Usuario actualizado con Exito .!');
+				Core::redir("./?view=home_admin");
+			} else {
+				Core::addToastr('error','No coinciden las contraseñas');
+				Core::redir("./?view=users&opt=edit&id=".$u->id);
+			}
 		}
-
-		Core::addToastr('success','Usuario actualizado con Exito .!');
-		Core::redir("./?view=home_admin");
 
 
 }else if(isset($_GET["opt"]) && $_GET["opt"] == "delete" && 

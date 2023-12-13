@@ -54,7 +54,7 @@
     </div>
     <?php 
     $url_actual = $_SERVER['REQUEST_URI'];
-    if(strpos($url_actual,'/claseUv/?view=login') !== false):
+    if(strpos($url_actual,'/Carreteras/?view=login') !== false):
     ?>
     
     <div class="wrapper">
@@ -92,7 +92,10 @@
                                   <!--logo End-->
                                                                                   
                                   
-                                  <h4 class="logo-title ms-3">Clase</h4>
+                                  <h4 class="logo-title ms-3">Secretaría de Comunicaciones</h4>
+
+
+
                                </a>
                                <h2 class="mb-2 text-center">INICIAR SESION</h2>
                                <p class="text-center">INGRESA TUS DATOS PARA INICIAR SESION.</p>
@@ -453,7 +456,7 @@
       else:?>
       <aside class="sidebar sidebar-default sidebar-white sidebar-base navs-rounded-all sidebar-dark">
             <div class="sidebar-header d-flex align-items-center justify-content-start">
-                <a href="./" class="navbar-brand">
+                <a href="./?view=home_admin" class="navbar-brand">
                     <!--Logo start-->
                     <!--logo End-->
                     

@@ -189,6 +189,7 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "all"){
 
 		
 if($found){
+
 ?>
 
 
@@ -233,7 +234,7 @@ if($found){
 	                  </div>
 	                  <div class="form-group col-md-6">
 	                     <label class="form-label" for="rpass">Repeat Password:</label>
-	                     <input type="password" class="form-control" id="rpass" placeholder="Repeat Password ">
+	                     <input type="password" class="form-control" id="rpass" name="repeatPassword" placeholder="repeatPassword">
 	                  </div>
 	               </div>
 	               

@@ -38,6 +38,7 @@ if(isset($_GET["opt"]) && $_GET["opt"] == "login"){
 			Core::addToastr("info","Bienvenido $username");
 			Core::redir("./?view=home_admin");
 		}else{
+			Core::addToastr("info","El usuario y/o la contraseña son incorrectos");
 			Core::redir("./?view=login");
 		}
 
